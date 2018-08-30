@@ -66,13 +66,13 @@ test('Should call onSubmit prop for valid form  submission', () => {
   wrapper.find('form').simulate('submit', {
     preventDefault: () => { }
   })
-  // expect(wrapper.state('error')).toBe('')
-  // expect(onSubmitSpy).toHaveBeenLastCalledWith({
-  //   description: expenses[1].description,
-  //   amount: expenses[1].amount,
-  //   note: expenses[1].note,
-  //   createdAt: expenses[1].createdAt
-  // })
+  expect(wrapper.state('error')).toBe('')
+  expect(onSubmitSpy).toHaveBeenLastCalledWith({
+    description: expenses[1].description,
+    amount: expenses[1].amount,
+    note: expenses[1].note,
+    createdAt: expenses[1].createdAt
+  })
 })
 
 test('Should set new date onDateChange', () => {
